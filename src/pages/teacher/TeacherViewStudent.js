@@ -70,9 +70,9 @@ const TeacherViewStudent = () => {
                 <div>
                     Name: {userDetails.name}
                     <br />
-                    Roll Number: {userDetails.rollNum}
+                    Matric Number: {userDetails.rollNum}
                     <br />
-                    Class: {sclassName.sclassName}
+                    Level: {sclassName.sclassName}
                     <br />
                     School: {studentSchool.schoolName}
                     <br /><br />

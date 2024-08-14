@@ -102,13 +102,13 @@ const ViewStudent = () => {
     }
 
     const deleteHandler = () => {
-        setMessage("Sorry the delete function has been disabled for now.")
-        setShowPopup(true)
+        // setMessage("Sorry the delete function has been disabled for now.")
+        // setShowPopup(true)
 
-        // dispatch(deleteUser(studentID, address))
-        //     .then(() => {
-        //         navigate(-1)
-        //     })
+        dispatch(deleteUser(studentID, address))
+            .then(() => {
+                navigate(-1)
+            })
     }
 
     const removeHandler = (id, deladdress) => {
@@ -344,7 +344,7 @@ const ViewStudent = () => {
             <div>
                 Name: {userDetails.name}
                 <br />
-                Roll Number: {userDetails.rollNum}
+                Matric Number: {userDetails.rollNum}
                 <br />
                 Department: {sclassName.sclassName}
                 <br />

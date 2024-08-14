@@ -27,7 +27,7 @@ const TeacherSideBar = () => {
                     <ListItemIcon>
                         <ClassOutlinedIcon color={location.pathname.startsWith("/Teacher/class") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
-                    <ListItemText primary={`Department`} />
+                    <ListItemText primary={`Detail`} />
                 </ListItemButton>
                
             </React.Fragment>

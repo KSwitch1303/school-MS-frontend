@@ -21,6 +21,12 @@ const AddStudent = ({ situation }) => {
     const [password, setPassword] = useState('')
     const [className, setClassName] = useState('')
     const [sclassName, setSclassName] = useState('')
+    const [dob, setDob] = useState('');
+    const [gender, setGender] = useState('');
+    const [email, setEmail] = useState('');
+    const [address, setAddress] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [emergencyContact, setEmergencyContact] = useState('');
 
     const adminID = currentUser._id
     const role = "Student"
@@ -53,7 +59,7 @@ const AddStudent = ({ situation }) => {
         }
     }
 
-    const fields = { name, rollNum, password, sclassName, adminID, role, attendance }
+    const fields = { name, rollNum, password, sclassName, adminID, role, attendance, dob, gender, email, address, phoneNumber, emergencyContact }
 
     const submitHandler = (event) => {
         event.preventDefault()
@@ -113,8 +119,8 @@ const AddStudent = ({ situation }) => {
                         </>
                     }
 
-                    <label>Roll Number</label>
-                    <input className="registerInput" type="number" placeholder="Enter student's Roll Number..."
+                    <label>Matric Number</label>
+                    <input className="registerInput" type="text" placeholder="Enter student's Matric Number..."
                         value={rollNum}
                         onChange={(event) => setRollNum(event.target.value)}
                         required />
@@ -124,6 +130,47 @@ const AddStudent = ({ situation }) => {
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
                         autoComplete="new-password" required />
+
+                    <label>Date of Birth</label>
+                    <input className="registerInput" type="date" placeholder="Enter student's Date of Birth..."
+                        value={dob}
+                        onChange={(event) => setDob(event.target.value)}
+                        required />
+
+                    <label>Gender</label>
+                    <select
+                        className="registerInput"
+                        value={gender}
+                        onChange={(event) => setGender(event.target.value)}
+                        required>
+                        <option value="Select Gender">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+
+                    <label>Email</label>
+                    <input className="registerInput" type="email" placeholder="Enter student's email..."
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                        required />
+
+                    <label>Address</label>
+                    <input className="registerInput" type="text" placeholder="Enter student's address..."
+                        value={address}
+                        onChange={(event) => setAddress(event.target.value)}
+                        required />
+
+                    <label>Phone Number</label>
+                    <input className="registerInput" type="text" placeholder="Enter student's phone number..."
+                        value={phoneNumber}
+                        onChange={(event) => setPhoneNumber(event.target.value)}
+                        required />
+
+                    <label>Emergency Contact</label>
+                    <input className="registerInput" type="text" placeholder="Enter student's emergency contact..."
+                        value={emergencyContact}
+                        onChange={(event) => setEmergencyContact(event.target.value)}
+                        required />
 
                     <button className="registerButton" type="submit" disabled={loader}>
                         {loader ? (

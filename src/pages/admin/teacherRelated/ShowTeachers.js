@@ -45,20 +45,17 @@ const ShowTeachers = () => {
     }
 
     const deleteHandler = (deleteID, address) => {
-        console.log(deleteID);
-        console.log(address);
-        setMessage("Sorry the delete function has been disabled for now.")
-        setShowPopup(true)
+        
 
-        // dispatch(deleteUser(deleteID, address)).then(() => {
-        //     dispatch(getAllTeachers(currentUser._id));
-        // });
+        dispatch(deleteUser(deleteID, address)).then(() => {
+            dispatch(getAllTeachers(currentUser._id));
+        });
     };
 
     const columns = [
         { id: 'name', label: 'Name', minWidth: 170 },
         { id: 'teachSubject', label: 'Subject', minWidth: 100 },
-        { id: 'teachSclass', label: 'Class', minWidth: 170 },
+        { id: 'teachSclass', label: 'Level', minWidth: 170 },
     ];
 
     const rows = teachersList.map((teacher) => {
@@ -120,7 +117,7 @@ const ShowTeachers = () => {
                                                                 onClick={() => {
                                                                     navigate(`/Admin/teachers/choosesubject/${row.teachSclassID}/${row.id}`)
                                                                 }}>
-                                                                Add Subject
+                                                                Add Course
                                                             </Button>
                                                         )}
                                                     </StyledTableCell>

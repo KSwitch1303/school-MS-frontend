@@ -1,6 +1,6 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import StudentDashboard from './pages/student/StudentDashboard';
@@ -10,11 +10,18 @@ import AdminRegisterPage from './pages/admin/AdminRegisterPage';
 import ChooseUser from './pages/ChooseUser';
 
 const App = () => {
-  const { currentRole } = useSelector(state => state.user);
+  const dispatch = useDispatch();
+  
+
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
+
+  const { currentRole } = useSelector((state) => state.user);
 
   return (
     <Router>
-      {currentRole === null &&
+      {currentRole === null && (
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/choose" element={<ChooseUser visitor="normal" />} />
@@ -26,28 +33,15 @@ const App = () => {
 
           <Route path="/Adminregister" element={<AdminRegisterPage />} />
 
-          <Route path='*' element={<Navigate to="/" />} />
-        </Routes>}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      )}
 
-      {currentRole === "Admin" &&
-        <>
-          <AdminDashboard />
-        </>
-      }
-
-      {currentRole === "Student" &&
-        <>
-          <StudentDashboard />
-        </>
-      }
-
-      {currentRole === "Teacher" &&
-        <>
-          <TeacherDashboard />
-        </>
-      }
+      {currentRole === 'Admin' && <AdminDashboard />}
+      {currentRole === 'Student' && <StudentDashboard />}
+      {currentRole === 'Teacher' && <TeacherDashboard />}
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

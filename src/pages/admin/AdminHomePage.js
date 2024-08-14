@@ -49,7 +49,7 @@ const AdminHomePage = () => {
                         <StyledPaper>
                             <img src={Classes} alt="Classes" />
                             <Title>
-                                Total Classes
+                                Total Levels
                             </Title>
                             <Data start={0} end={numberOfClasses} duration={5} />
                         </StyledPaper>

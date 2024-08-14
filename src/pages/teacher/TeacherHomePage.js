@@ -49,6 +49,15 @@ const TeacherHomePage = () => {
                             <Data start={0} end={numberOfSessions} duration={5} />
                         </StyledPaper>
                     </Grid>
+                    <Grid item xs={12} md={3} lg={3}>
+                        <StyledPaper>
+                            <img src={Lessons} alt="Lessons" />
+                            <Title>
+                                Total Courses
+                            </Title>
+                            <Data start={0} end={1} duration={5} />
+                        </StyledPaper>
+                    </Grid>
                     
                     <Grid item xs={12}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>

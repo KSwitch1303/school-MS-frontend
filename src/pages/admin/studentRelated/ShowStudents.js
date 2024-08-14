@@ -45,19 +45,19 @@ const ShowStudents = () => {
     const deleteHandler = (deleteID, address) => {
         console.log(deleteID);
         console.log(address);
-        setMessage("Sorry the delete function has been disabled for now.")
-        setShowPopup(true)
+        // setMessage("Sorry the delete function has been disabled for now.")
+        // setShowPopup(true)
 
-        // dispatch(deleteUser(deleteID, address))
-        //     .then(() => {
-        //         dispatch(getAllStudents(currentUser._id));
-        //     })
+        dispatch(deleteUser(deleteID, address))
+            .then(() => {
+                dispatch(getAllStudents(currentUser._id));
+            })
     }
 
     const studentColumns = [
         { id: 'name', label: 'Name', minWidth: 170 },
-        { id: 'rollNum', label: 'Roll Number', minWidth: 100 },
-        { id: 'sclassName', label: 'Department', minWidth: 170 },
+        { id: 'rollNum', label: 'Matric Number', minWidth: 100 },
+        { id: 'sclassName', label: 'Level', minWidth: 170 },
     ]
 
     const studentRows = studentsList && studentsList.length > 0 && studentsList.map((student) => {

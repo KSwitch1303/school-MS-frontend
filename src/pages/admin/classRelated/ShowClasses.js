@@ -37,18 +37,18 @@ const ShowClasses = () => {
   const [message, setMessage] = useState("");
 
   const deleteHandler = (deleteID, address) => {
-    console.log(deleteID);
-    console.log(address);
-    setMessage("Sorry the delete function has been disabled for now.")
-    setShowPopup(true)
-    // dispatch(deleteUser(deleteID, address))
-    //   .then(() => {
-    //     dispatch(getAllSclasses(adminID, "Sclass"));
-    //   })
+    // console.log(deleteID);
+    // console.log(address);
+    // setMessage("Sorry the delete function has been disabled for now.")
+    // setShowPopup(true)
+    dispatch(deleteUser(deleteID, address))
+      .then(() => {
+        dispatch(getAllSclasses(adminID, "Sclass"));
+      })
   }
 
   const sclassColumns = [
-    { id: 'name', label: 'Department Name', minWidth: 170 },
+    { id: 'name', label: 'Levels', minWidth: 170 },
   ]
 
   const sclassRows = sclassesList && sclassesList.length > 0 && sclassesList.map((sclass) => {

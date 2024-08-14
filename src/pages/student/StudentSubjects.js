@@ -85,19 +85,28 @@ const StudentSubjects = () => {
                     Department Details
                 </Typography>
                 <Typography variant="h5" gutterBottom>
-                    You are currently in Department {sclassDetails && sclassDetails.sclassName}
+                    
                 </Typography>
                 <Typography variant="h6" gutterBottom>
-                    And these are the Courses:
+                   
                 </Typography>
-                {subjectsList &&
-                    subjectsList.map((subject, index) => (
-                        <div key={index}>
-                            <Typography variant="subtitle1">
-                                {subject.subName} ({subject.subCode})
-                            </Typography>
-                        </div>
-                    ))}
+                <Table>
+                    <TableHead>
+                        <StyledTableRow>
+                            <StyledTableCell>Course Name</StyledTableCell>
+                            <StyledTableCell>Course Code</StyledTableCell>
+                        </StyledTableRow>
+                    </TableHead>
+                    <TableBody>
+                        {subjectsList &&
+                            subjectsList.map((subject, index) => (
+                                <StyledTableRow key={index}>
+                                    <StyledTableCell>{subject.subName}</StyledTableCell>
+                                    <StyledTableCell>{subject.subCode}</StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                    </TableBody>
+                </Table>
             </Container>
         );
     };

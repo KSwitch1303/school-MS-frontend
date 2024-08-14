@@ -18,7 +18,7 @@ const Homepage = () => {
                         <StyledTitle>
                             Welcome to
                             <br />
-                            Odudwa University
+                            Oduduwa University
                             <br />
                             Student Information system
                         </StyledTitle>

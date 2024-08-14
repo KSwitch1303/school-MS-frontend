@@ -27,14 +27,17 @@ const TeacherClassDetails = () => {
 
     const studentColumns = [
         { id: 'name', label: 'Name', minWidth: 170 },
-        { id: 'rollNum', label: 'Roll Number', minWidth: 100 },
+        { id: 'rollNum', label: 'Matric Number', minWidth: 100 },
     ]
+    
 
     const studentRows = sclassStudents.map((student) => {
+        
         return {
             name: student.name,
             rollNum: student.rollNum,
             id: student._id,
+            
         };
     })
 
@@ -163,7 +166,7 @@ const TeacherClassDetails = () => {
                             <Typography variant="h5" gutterBottom>
                                 Students List:
                             </Typography>
-
+                            
                             {Array.isArray(sclassStudents) && sclassStudents.length > 0 &&
                                 <TableTemplate buttonHaver={StudentsButtonHaver} columns={studentColumns} rows={studentRows} />
                             }
