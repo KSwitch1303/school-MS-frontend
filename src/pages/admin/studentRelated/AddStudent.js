@@ -47,8 +47,8 @@ const AddStudent = ({ situation }) => {
     }, [adminID, dispatch]);
 
     const changeHandler = (event) => {
-        if (event.target.value === 'Select Department') {
-            setClassName('Select Department');
+        if (event.target.value === 'Select Level') {
+            setClassName('Select Level');
             setSclassName('');
         } else {
             const selectedClass = sclassesList.find(
@@ -64,7 +64,7 @@ const AddStudent = ({ situation }) => {
     const submitHandler = (event) => {
         event.preventDefault()
         if (sclassName === "") {
-            setMessage("Please select a department")
+            setMessage("Please select a level")
             setShowPopup(true)
         }
         else {
@@ -104,12 +104,12 @@ const AddStudent = ({ situation }) => {
                     {
                         situation === "Student" &&
                         <>
-                            <label>Department</label>
+                            <label>Level</label>
                             <select
                                 className="registerInput"
                                 value={className}
                                 onChange={changeHandler} required>
-                                <option value='Select Class'>Select Department</option>
+                                <option value='Select Class'>Select Level</option>
                                 {sclassesList.map((classItem, index) => (
                                     <option key={index} value={classItem.sclassName}>
                                         {classItem.sclassName}
