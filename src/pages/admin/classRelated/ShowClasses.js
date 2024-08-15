@@ -133,7 +133,7 @@ const ShowClasses = () => {
 
   const actions = [
     {
-      icon: <AddCardIcon color="primary" />, name: 'Add New Course',
+      icon: <AddCardIcon color="primary" />, name: 'Add Level',
       action: () => navigate("/Admin/addclass")
     },
     {
@@ -151,7 +151,7 @@ const ShowClasses = () => {
           {getresponse ?
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px' }}>
               <GreenButton variant="contained" onClick={() => navigate("/Admin/addclass")}>
-                Add Course
+                Add Level
               </GreenButton>
             </Box>
             :
